@@ -1,3 +1,9 @@
+<?php
+    require 'connect.php';
+    require 'studentscreate.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +13,10 @@
 </head>
 <body>
     <h1>Student Registration Form</h1>
-    <form action="process.php" method="POST">
+    <form action="" method="POST">
         <label for="name">Student Name:</label>
-        <input type="text" id="name" name="firstname" placeholder="First Name"> - 
-        <input type="text" id="name" name="lastname" placeholder="Last Name" ><br><br>
+      
+        <input type="text" id="name" name="name" placeholder="Name" ><br><br>
 
         <label for="mobile">Mobile no.: +95 - </label>
         <input type="text" id="mobile" name="mobile" ><br><br>
@@ -18,8 +24,6 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" ><br><br>
 
-        <label for="password">Password:</label>
-        <input type="text" id="password" name="password"><br><br>
 
         <label for="gender">Gender:</label>
         <input type="radio" id="male" name="gender" value="Male"> Male
@@ -33,7 +37,8 @@
         <label for="address">Address:</label><br>
         <textarea id="address" name="address" rows="4" cols="30" ></textarea><br><br>
 
-        <input type="submit" value="Register" name="submit">
+        <button type="submit" value="Register" name="create_btn">Register</button>
+        <br><br>
         <a href="index.html">View All Registered Students</a>
         </form>
 </body>

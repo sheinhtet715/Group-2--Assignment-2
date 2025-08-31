@@ -1,3 +1,9 @@
+<?php
+    require 'connect.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +24,7 @@
         exit;
     }
 
-    $firstname   = $_POST['firstname']  ;
+
     $lastname    = $_POST['lastname']   ;
 
     $mobile      = $_POST['mobile']     ;
@@ -27,9 +33,7 @@
     $department  = $_POST['department'] ?? '';
     $address     = $_POST['address']    ;
     
-    if ($firstname === '') {
-        echo "<p style='color: red;'>fname is required.</p>";
-    }
+
     if ($lastname === '') {
         echo "<p style='color: red;'>lname is required.</p>";
     }
@@ -51,7 +55,7 @@
         echo "<p style='color: red;'>address is required.</p>";
     }
 
-    echo "Name: $firstname $lastname<br>";
+
     echo "Father's Name: $fathername<br>";
     echo "DOB: $dob<br>";
     echo "Mobile: +91- $mobile<br>";

@@ -27,7 +27,7 @@ USE students_list;
 -- Table structure for table `registered students`
 --
 
-CREATE TABLE `registered students` (
+CREATE TABLE `registered_students` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `mobile_number` varchar(30) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `registered students` (
 --
 -- Indexes for table `registered students`
 --
-ALTER TABLE `registered students`
+ALTER TABLE `registered_students`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,7 +54,7 @@ ALTER TABLE `registered students`
 --
 -- AUTO_INCREMENT for table `registered students`
 --
-ALTER TABLE `registered students`
+ALTER TABLE `registered_students`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
