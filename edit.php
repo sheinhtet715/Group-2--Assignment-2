@@ -1,7 +1,6 @@
 <?php
     require 'connect.php';
 
-
     if(isset($_GET['id'])){
         $post_id_to_update = $_GET['id'];
         
@@ -32,17 +31,26 @@
         $address = $_POST['address'];
 
 
-        if(empty($id)){
-            $idError="The id field is required";
-        }
-
         if(empty($name)){
             $nameError="The name field is required";
         }
         if(empty($mobile)){
             $mobileError="The mobile field is required";
         }
-        if(!empty($id && !empty($name)))
+        if(empty($email)){
+            $emailError="The email field is required";
+        }
+        if(empty($gender)){
+            $genderError="The gender filed is required";
+        }
+        if(empty($department)){
+            $departmentError="The department field is required";
+        }
+        if(empty($address)){
+            $addressError="The address field is required";
+        }
+
+        if(!empty($name) && !empty($mobile) && !empty($email) && !empty($gender) && !empty($department) && !empty($address)){
             $sql = "UPDATE registered_students SET name='$name', mobile_number='$mobile', email='$email', gender = '$gender',  department='$department', address='$address'
             WHERE id=$post_id_to_update";
             $result = mysqli_query($db,$sql);
@@ -52,7 +60,7 @@
                 echo "Failed: " . mysqli_error($db);
             }
         }    
-    
+    }
 ?>
 
 <!DOCTYPE html>
