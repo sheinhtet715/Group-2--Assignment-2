@@ -39,7 +39,7 @@
 
         <button type="submit" value="Register" name="create_btn">Register</button>
         <br><br>
-        <a href="index.html">View All Registered Students</a>
+        <a href="view.php">View All Registered Students</a>
         </form>
 </body>
 </html>

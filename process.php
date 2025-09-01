@@ -16,7 +16,7 @@
 
     <h1>New Record Created Successfully</h1>
     <a href="index.php">Back to Registration</a>   <br>
-    <a href="">View all Registration</a>
+    <a href="view.php">View all Registration</a>
 
 
 </body>
