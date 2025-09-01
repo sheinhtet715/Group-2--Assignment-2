@@ -61,8 +61,14 @@ if(isset($_POST['update_button'])){
     <meta name="viewport" content="width=s, initial-scale=1.0">
     <title>Document</title>
      <style>
+        *{
+            margin: 0;
+            padding: 0;
+          
+        }
         body{
-            padding : 25px;
+            padding: 20px 10px;
+
 
         }
 
