@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'connect.php';
 
     if (isset($_GET['id'])) {
@@ -46,7 +47,8 @@ if(isset($_POST['update_button'])){
         WHERE id=$post_id_to_update";
         $result = mysqli_query($db,$sql);
         if($result){
-            header("Location: view.php?msg=Record updated successfully");
+            $_SESSION['message'] = "Record Updated Successfully";
+            header("Location: process.php");
         }else{
             echo "Failed: " . mysqli_error($db);
         }
