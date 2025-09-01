@@ -1,8 +1,8 @@
 <?php
     require 'connect.php';
 
-    if (isset($_GET['edit_id'])) {
-    $post_id_to_update = $_GET['edit_id'];
+    if (isset($_GET['id'])) {
+    $post_id_to_update = $_GET['id'];
         
     $post = mysqli_query($db,"SELECT * FROM registered_students WHERE id=$post_id_to_update");
 
@@ -101,7 +101,7 @@ if(isset($_POST['update_button'])){
             <td><?php echo $student['gender']; ?></td>
             <td><?php echo $student['department']; ?></td>
             <td><?php echo $student['address']; ?></td>
-            <td><a href="view.php?edit_id=<?php echo $student['id']; ?>">Edit</a></td>
+            <td><a href="view.php?id=<?php echo $student['id']; ?>">Edit</a></td>
 
         </tr>
         <?php } ?>
@@ -144,7 +144,7 @@ if(isset($_POST['update_button'])){
 
         <button type="submit" value="Update" name="update_button">Update Record</button>
         <br><br>
-        <!-- <a href="view.php">Cancel and Go Back to List</a> -->
+        <a href="view.php">Cancel and Go Back to List</a>
         </form>
 
         <?php endif; ?>
