@@ -46,7 +46,7 @@ if(isset($_POST['update_button'])){
         WHERE id=$post_id_to_update";
         $result = mysqli_query($db,$sql);
         if($result){
-            header("Location: view.php?Record updated successfully");
+            header("Location: view.php?msg=Record updated successfully");
         }else{
             echo "Failed: " . mysqli_error($db);
         }
