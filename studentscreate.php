@@ -18,12 +18,12 @@ $departmentError = '';
 $addressError = '';
 
 if (isset($_POST['create_btn'])) {
-    $name       = $_POST['name']       ?? '';
-    $mobile     = $_POST['mobile']     ?? '';
-    $email      = $_POST['email']      ?? '';
-    $gender     = $_POST['gender']     ?? '';
+    $name       = $_POST['name']       ;
+    $mobile     = $_POST['mobile']     ;
+    $email      = $_POST['email']      ;
+    $gender     = $_POST['gender']    ?? '';
     $department = $_POST['department'] ?? '';
-    $address    = $_POST['address']    ?? '';
+    $address    = $_POST['address']    ;
 
     if(empty($name)){
         $nameError = "Name is required";
