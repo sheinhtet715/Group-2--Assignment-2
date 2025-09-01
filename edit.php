@@ -1,5 +1,6 @@
 <?php
     require 'connect.php';
+    require 'studentscreate.php';
 
     if(isset($_GET['id'])){
         $post_id_to_update = $_GET['id'];

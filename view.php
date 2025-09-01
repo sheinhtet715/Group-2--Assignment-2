@@ -41,12 +41,12 @@ if(isset($_POST['update_button'])){
     if(empty($mobile)){
         $mobileError="The mobile field is required";
     }
-    if (!empty($id) && !empty($name)) {
+   if(!empty($name) && !empty($mobile) && !empty($email) && !empty($gender) && !empty($department) && !empty($address)){
         $sql = "UPDATE registered_students SET name='$name', mobile_number='$mobile', email='$email', gender = '$gender',  department='$department', address='$address'
         WHERE id=$post_id_to_update";
         $result = mysqli_query($db,$sql);
         if($result){
-            header("Location: view.php?msg=Record updated successfully");
+            header("Location: view.php?Record updated successfully");
         }else{
             echo "Failed: " . mysqli_error($db);
         }
