@@ -53,7 +53,7 @@ if (isset($_POST['create_btn'])) {
         )";
         mysqli_query($db, $sqlquery);
         $_SESSION['status'] = "Student Registered Successfully";
-        header('Location: process.php');
+        header("Location: process.php");
         exit();
     }
 
