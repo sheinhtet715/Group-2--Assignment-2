@@ -9,7 +9,7 @@
 
     if(mysqli_num_rows($post) == 1){
         foreach($post as $row){
-            $id = $row['id'];//table->name
+            $id = $row['id'];
             $name =$row['name'];
             $mobile = $row['mobile_number'];
             $email = $row['email'];
@@ -23,24 +23,32 @@
 
     $nameError ='';
     $mobileError ='';
+    $emailError ='';
+    $departmentError ='';
+    $addressError ='';
 if(isset($_POST['update_button'])){
     $name = $_POST['name'];
     $mobile = $_POST['mobile_number'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $department = $_POST['department'];
+    $department = $_POST['department'] ?? '';
     $address = $_POST['address'];
 
-
-    if(empty($id)){
-        $idError="The id field is required";
-    }
-
     if(empty($name)){
-        $nameError="The name field is required";
+        $nameError="Name is required.";
     }
     if(empty($mobile)){
-        $mobileError="The mobile field is required";
+        $mobileError="Mobile is required.";
+    }
+    if(empty($email)){
+        $emailError="Email is required.";
+    }
+
+    if(empty($department)){
+        $departmentError="Department is required.";
+    }
+    if(empty($address)){
+        $addressError="Address is required.";
     }
    if(!empty($name) && !empty($mobile) && !empty($email) && !empty($gender) && !empty($department) && !empty($address)){
         $sql = "UPDATE registered_students SET name='$name', mobile_number='$mobile', email='$email', gender = '$gender',  department='$department', address='$address'
@@ -140,32 +148,47 @@ if(isset($_POST['update_button'])){
 
     <?php if (isset($post_id_to_update)): ?>
 
-    <h1>Edit Student Record</h1>
+    <h1>Edit Student Record</h1><br>
     <form action="" method="POST">
         <input type="hidden" name="id" value="<?php echo $id; ?>">
-
+        
+        <div>
         <label for="name">Student Name:</label>
-      
-        <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $name ?>"><br><br>
-
+        <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $name ?>"> 
+        <span class="text-danger"><?php echo $nameError ?></span>
+        </div><br>
+        
+        <div>
         <label for="mobile">Mobile no.: +95 - </label>
-        <input type="text" id="mobile" name="mobile_number" value="<?php echo $mobile ?>"><br><br>
+        <input type="text" id="mobile" name="mobile_number" value="<?php echo $mobile ?>">
+        <span class="text-danger"><?php echo $mobileError ?></span>
+        </div><br>
 
+        <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $email?>"><br><br>
-
+        <input type="email" id="email" name="email" value="<?php echo $email?>">
+        <span class="text-danger"><?php echo $emailError ?></span>
+        </div><br>
+       
+        <div>
+        <label for="gender">Gender:</label>
         <input type="radio" id="male" name="gender" value="Male" <?php if($gender=="Male"){echo "checked";} ?>> Male
         <input type="radio" id="female" name="gender" value="Female" <?php if($gender=="Female"){echo "checked";} ?>> Female
-        <br><br>
+        </div><br>
 
+        <div>
         <label for="department">Department:</label><br>
         <input type="checkbox" id="english" name="department" value="English" <?php if($department=="English"){echo "checked";} ?>> English
         <input type="checkbox" id="computer" name="department" value="Computer" <?php if($department=="Computer"){echo "checked";} ?>> Computer
         <input type="checkbox" id="business" name="department" value="Business" <?php if($department=="Business"){echo "checked";} ?>> Business
-        <br><br>
+        <span class="text-danger"><?php echo $departmentError; ?></span>
+        </div><br>
         
+        <div>
         <label for="address">Address:</label><br>
-        <textarea id="address" name="address" rows="4" cols="30" ><?php echo $address; ?></textarea><br><br>
+        <textarea id="address" name="address" rows="4" cols="30" ><?php echo $address; ?></textarea>
+        <span class="text-danger"><?php echo $addressError ?></span>
+        </div><br>
 
         <button type="submit" value="Update" name="update_button">Update Record</button>
         <br><br>
