@@ -33,7 +33,7 @@
 
 </head>
 <body>
-    <h1>Student Registration Form</h1>
+    <h1>Student Registration Form</h1><br>
     <form action="" method="POST">
         <div class="">
         <label for="name">Student Name:</label>
