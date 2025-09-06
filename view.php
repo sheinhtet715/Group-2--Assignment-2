@@ -100,6 +100,13 @@ if(isset($_POST['update_button'])){
         th {
             background-color:  #d8dadcff;
         }
+        button {
+
+            padding: 0px 3px; 
+
+            border-radius: 6px; 
+          
+        }
 
     </style>
 </head>
@@ -110,7 +117,7 @@ if(isset($_POST['update_button'])){
 
     <table class="table table-bordered">
         <thead>
-            <tr>
+            <tr class="table-secondary">
                 <th>ID</th>
                 <th>Student Name</th>
                 <th>Mobile No.</th>
