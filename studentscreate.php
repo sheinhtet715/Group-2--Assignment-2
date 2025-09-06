@@ -20,6 +20,7 @@ $addressError = '';
 if (isset($_POST['create_btn'])) {
     $name       = $_POST['name']       ;
     $mobile     = $_POST['mobile']     ;
+    $mobile = preg_replace('/\D/', '', $mobile);
     $email      = $_POST['email']      ;
     $gender     = $_POST['gender']    ?? '';
     $department = $_POST['department'] ?? '';
