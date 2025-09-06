@@ -28,6 +28,7 @@
     $addressError ='';
 if(isset($_POST['update_button'])){
     $name = $_POST['name'];
+     $mobile = $_POST['mobile_number'];
     $mobile = preg_replace('/\D/', '', $mobile);
     $email = $_POST['email'];
     $gender = $_POST['gender'];
