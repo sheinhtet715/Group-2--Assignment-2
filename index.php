@@ -18,20 +18,20 @@
     <form action="" method="POST">
         <div class="">
         <label for="name">Student Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $name;?>"><br><br>
-        <span><?php echo $nameError; ?></span>
+        <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $name;?>">
+        <span class="text-danger"><?php echo $nameError; ?></span><br><br>
         </div>
 
 <div class="">
         <label for="mobile">Mobile no.: +95 - </label>
-        <input type="text" id="mobile" name="mobile" value="<?php echo $mobile;?>" ><br><br>
-         <span><?php echo $mobileError; ?></span>
+        <input type="text" id="mobile" name="mobile" value="<?php echo $mobile;?>" >
+         <span class="text-danger"><?php echo $mobileError; ?></span><br><br>
         </div>
         <div class="">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $email;?>" ><br><br>
-         <span><?php echo $emailError; ?></span>
+        <input type="email" id="email" name="email" value="<?php echo $email;?>" >
+         <span class="text-danger"><?php echo $emailError; ?></span><br><br>
         </div>
 
         <div class="">
@@ -39,7 +39,7 @@
         <label for="gender">Gender:</label>
         <input type="radio" id="male" name="gender" value="Male"  <?php if ($gender === "Male") echo "checked"; ?>> Male
         <input type="radio" id="female" name="gender" value="Female" <?php if ($gender === "Female") echo "checked"; ?>> Female <br><br>
-        <span><?php echo $genderError; ?></span>
+        <span class="text-danger"><?php echo $genderError; ?></span>
         </div>
 
         <div class="">
@@ -48,14 +48,14 @@
         <input type="checkbox" id="english"  name="department" value="English" <?php if ($department === "English") echo "checked"; ?>> English
         <input type="checkbox" id="computer" name="department" value="Computer" <?php if ($department === "Computer") echo "checked"; ?>> Computer
         <input type="checkbox" id="business" name="department" value="Business" <?php if ($department === "Business") echo "checked"; ?>> Business<br><br>
-        <span><?php echo $departmentError; ?></span>
+        <span class="text-danger"><?php echo $departmentError; ?></span>
         </div>
 
         <div class="">
 
         <label for="address">Address:</label><br>
         <textarea id="address" name="address" rows="4" cols="30" value="<?php echo $address;?>"></textarea><br><br>
-         <span><?php echo $addressError; ?></span>
+         <span class="text-danger"><?php echo $addressError; ?></span>
         </div>
 
         <button type="submit" value="Register" name="create_btn">Register</button>
